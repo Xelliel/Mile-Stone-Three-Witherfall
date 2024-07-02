@@ -8,7 +8,7 @@ body {
   
   .App {
     text-align: center;
-    background: url('C:\Users\malko\Milestone3\Mile-Stone-Three-Witherfall\client\public\horror-background.jpg.jpg') no-repeat center center fixed;
+    background: url('C:\Users\malko\Milestone3\Mile-Stone-Three-Witherfall\client\public\horror-background.jpg') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
     display: flex;
@@ -35,6 +35,21 @@ body {
     font-size: 1.5rem;
     color: #aaa;
     text-shadow: 1px 1px #000;
+  }
+  
+  .banner {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.5);
+  }
+  
+  .banner h2 {
+    color: #f00;
+    margin: 0;
+    text-shadow: 2px 2px #000;
   }
   
   .login-box {
@@ -82,5 +97,33 @@ body {
   
   .btn:hover {
     background: #b30000;
+  }
+  
+  .book-covers {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .book-cover {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.5);
+    text-align: center;
+    width: 150px;
+  }
+  
+  .book-cover img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  .book-cover p {
+    color: #f00;
+    margin-top: 10px;
+    text-shadow: 1px 1px #000;
   }
   
