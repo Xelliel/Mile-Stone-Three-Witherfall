@@ -116,11 +116,11 @@ body {
   
   .book-cover {
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.5);
     text-align: center;
-    width: 150px;
+    width: 300px;
   }
   
   .book-cover img {
@@ -132,5 +132,6 @@ body {
     color: #f00;
     margin-top: 10px;
     text-shadow: 1px 1px #000;
+    text-align: left;
   }
   
