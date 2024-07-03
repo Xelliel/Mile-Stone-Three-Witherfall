@@ -103,7 +103,7 @@ function App() {
         </div>
         <div className="book-cover">
           <img src="https://images.pexels.com/photos/5407935/pexels-photo-5407935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Book Cover 3" />
-          <p>The Witch of Witherfield: Betrayed and left to the coldest sleep, Wyvern is a man abandoned by friends and gods alike. He makes his journey home on the heels of revenge and only a flame of burning kindling his frozen heart</p>
+          <p>The Witch of Witherfield: Betrayed and left to the coldest sleep, Wyvern is a man abandoned by friends and gods alike. He makes his journey home with only a flame of burning revenge to kindle his frozen heart</p>
         </div>
       </div>
     </div>
