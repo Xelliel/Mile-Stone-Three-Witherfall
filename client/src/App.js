@@ -1,15 +1,34 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './App.css';
 
 function App() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // State variables for login
+  const [loginEmail, setLoginEmail] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
 
-  const handleLogin = (event) => {
+  // State variables for registration
+  const [registerEmail, setRegisterEmail] = useState('');
+  const [registerPassword, setRegisterPassword] = useState('');
+
+  const handleLogin = async (event) => {
     event.preventDefault();
-    // Add your login logic here
-    console.log('Email:', email);
-    console.log('Password:', password);
+    try {
+      const response = await axios.post('/api/login', { email: loginEmail, password: loginPassword });
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error logging in:', error);
+    }
+  };
+
+  const handleRegister = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post('/api/register', { email: registerEmail, password: registerPassword });
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error registering:', error);
+    }
   };
 
   return (
@@ -23,42 +42,67 @@ function App() {
         <h2>Newsletter</h2>
       </div>
 
-      <div className="login-box">
-        <h2>Login</h2>
-        <form onSubmit={handleLogin}>
-          <div className="textbox">
-            <input
-              type="text"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="textbox">
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <button type="submit" className="btn">Login</button>
-        </form>
+      <div className="login-container">
+        <div className="login-box">
+          <h2>Welcome home. Login</h2>
+          <form onSubmit={handleLogin}>
+            <div className="textbox">
+              <input
+                type="text"
+                placeholder="Email"
+                value={loginEmail}
+                onChange={(e) => setLoginEmail(e.target.value)}
+              />
+            </div>
+            <div className="textbox">
+              <input
+                type="password"
+                placeholder="Password"
+                value={loginPassword}
+                onChange={(e) => setLoginPassword(e.target.value)}
+              />
+            </div>
+            <button type="submit" className="btn">Login</button>
+          </form>
+        </div>
+
+        <div className="login-box">
+          <h2>New User? Register Here.</h2>
+          <form onSubmit={handleRegister}>
+            <div className="textbox">
+              <input
+                type="text"
+                placeholder="Email"
+                value={registerEmail}
+                onChange={(e) => setRegisterEmail(e.target.value)}
+              />
+            </div>
+            <div className="textbox">
+              <input
+                type="password"
+                placeholder="Password"
+                value={registerPassword}
+                onChange={(e) => setRegisterPassword(e.target.value)}
+              />
+            </div>
+            <button type="submit" className="btn">Register</button>
+          </form>
+        </div>
       </div>
 
       <div className="book-covers">
-        <h2>Featured Books</h2>
+        <h2>Featured Books by Timothy Bates</h2>
         <div className="book-cover">
           <img src="https://media.istockphoto.com/id/157281215/photo/alchemy.jpg?s=2048x2048&w=is&k=20&c=-0_q_C_urOcZkHgf45GuDD9tgpnNeW0katZoS7rMQ-Q=" alt="Book Cover 1" />
-          <p>Book Title 1</p>
+          <p>The Grey Sleep</p>
         </div>
         <div className="book-cover">
-          <img src="C:\Users\malko\Milestone3\Mile-Stone-Three-Witherfall\client\public\Witch of Witherfield Cover 2.gif" alt="Book Cover 2" />
-          <p>Book Title 2</p>
+          <img src="https://images.pexels.com/photos/8360516/pexels-photo-8360516.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Book Cover 2" />
+          <p>A Red Awakening</p>
         </div>
         <div className="book-cover">
           <img src="https://images.pexels.com/photos/5407935/pexels-photo-5407935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Book Cover 3" />
-          <p>Book Title 3</p>
+          <p>The Witch of Witherfield</p>
         </div>
       </div>
     </div>

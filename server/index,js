@@ -1,0 +1,52 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const bcrypt = require('bcryptjs');
+const mongoose = require('mongoose');
+
+const app = express();
+const port = process.env.PORT || 5000;
+
+app.use(bodyParser.json());
+
+// Connect to MongoDB (make sure to replace <DB_URL> with your actual database URL)
+mongoose.connect('<DB_URL>', { useNewUrlParser: true, useUnifiedTopology: true });
+
+// Define a User schema
+const UserSchema = new mongoose.Schema({
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true }
+});
+
+const User = mongoose.model('User', UserSchema);
+
+// Route to register a new user
+app.post('/api/register', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = new User({ email, password: hashedPassword });
+    await newUser.save();
+    res.status(201).send('User registered');
+  } catch (error) {
+    res.status(500).send('Error registering user');
+  }
+});
+
+// Route to login a user
+app.post('/api/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
+    if (user && await bcrypt.compare(password, user.password)) {
+      res.status(200).send('Login successful');
+    } else {
+      res.status(400).send('Invalid credentials');
+    }
+  } catch (error) {
+    res.status(500).send('Error logging in');
+  }
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
