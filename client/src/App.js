@@ -39,7 +39,7 @@ function App() {
       </header>
       
       <div className="banner">
-        <h2>Newsletter</h2>
+        <h2>Where will your travels take you?</h2>
       </div>
 
       <div className="login-container">
