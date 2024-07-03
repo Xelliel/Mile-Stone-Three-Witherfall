@@ -35,7 +35,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Welcome to Witherfall</h1>
-        <p>Below is a place where nightmares come alive and dreams turn to the blackest midnight.</p>
+        <p>A place where nightmares come alive and dreams turn to blackest midnight.</p>
       </header>
       
       <div className="banner">
