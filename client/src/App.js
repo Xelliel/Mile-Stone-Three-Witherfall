@@ -94,11 +94,12 @@ function App() {
         <h2>Featured Books by Timothy Bates</h2>
         <div className="book-cover">
           <img src="https://media.istockphoto.com/id/157281215/photo/alchemy.jpg?s=2048x2048&w=is&k=20&c=-0_q_C_urOcZkHgf45GuDD9tgpnNeW0katZoS7rMQ-Q=" alt="Book Cover 1" />
-          <p>The Grey Sleep</p>
+          <p>The Grey Sleep  :    
+            James Dawson is a man haunted by his dreams and hunted by a war unknown. A shadow marks his path. how long can an already fragile sanity hold?</p>
         </div>
         <div className="book-cover">
           <img src="https://images.pexels.com/photos/8360516/pexels-photo-8360516.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Book Cover 2" />
-          <p>A Red Awakening</p>
+          <p>A Red Awakening:    The anomaly in Kitefall has left the land in ruins, with a world crumbling apart, how far will James travel to find truth at the Heart of The Great Awakening?</p>
         </div>
         <div className="book-cover">
           <img src="https://images.pexels.com/photos/5407935/pexels-photo-5407935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Book Cover 3" />
