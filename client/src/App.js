@@ -53,7 +53,7 @@ function App() {
           <p>Book Title 1</p>
         </div>
         <div className="book-cover">
-          <img src="client\public\Witch of Witherfield Cover 2.webp" alt="Book Cover 2" />
+          <img src="C:\Users\malko\Milestone3\Mile-Stone-Three-Witherfall\client\public\Witch of Witherfield Cover 2.gif" alt="Book Cover 2" />
           <p>Book Title 2</p>
         </div>
         <div className="book-cover">

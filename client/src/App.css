@@ -1,3 +1,4 @@
+/* Basic reset */
 body {
     margin: 0;
     padding: 0;
@@ -6,9 +7,10 @@ body {
     color: #fff;
   }
   
+  /* App container */
   .App {
     text-align: center;
-    background: url('C:\Users\malko\Milestone3\Mile-Stone-Three-Witherfall\client\public\horror-background.jpg') no-repeat center center fixed;
+    background: url('https://images.pexels.com/photos/6545135/pexels-photo-6545135.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
     display: flex;
@@ -17,6 +19,7 @@ body {
     align-items: center;
   }
   
+  /* Header styles */
   .App-header {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
@@ -37,6 +40,7 @@ body {
     text-shadow: 1px 1px #000;
   }
   
+  /* Banner styles */
   .banner {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 15px;
@@ -52,6 +56,7 @@ body {
     text-shadow: 2px 2px #000;
   }
   
+  /* Login box styles */
   .login-box {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 20px;
@@ -99,6 +104,7 @@ body {
     background: #b30000;
   }
   
+  /* Book covers styles */
   .book-covers {
     margin-top: 40px;
     display: flex;
@@ -125,5 +131,42 @@ body {
     color: #f00;
     margin-top: 10px;
     text-shadow: 1px 1px #000;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .App-header h1 {
+      font-size: 3rem;
+    }
+  
+    .App-header p {
+      font-size: 1.2rem;
+    }
+  
+    .login-box {
+      width: 80%;
+    }
+  
+    .book-cover {
+      width: calc(100% / 2 - 20px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .App-header h1 {
+      font-size: 2rem;
+    }
+  
+    .App-header p {
+      font-size: 1rem;
+    }
+  
+    .login-box {
+      width: 90%;
+    }
+  
+    .book-cover {
+      width: 100%;
+    }
   }
   
